@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  myapp-mysql:
+    command: --default-authentication-plugin=mysql_native_password
+    image: mysql:8.0
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=no
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: "/usr/bin/mysql --user=admin --password=admin--execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
+  myapp-main:
+    container_name: dimas-test-api
+    image: dimas-test-api:0.3
+    build: ./
+    restart: on-failure
+    depends_on:
+      - myapp-mysql
+    ports:
+      - 8089:8080
+
