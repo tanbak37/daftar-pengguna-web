@@ -18,5 +18,6 @@ http://localhost:8080/swagger-ui.html#/  (User : admin, password : admin)
 
 
 semua API menggunakan basicauth 
-User :admin
+
+User : admin
 Password : admin
