@@ -1,6 +1,0 @@
-com\test\restservice\swagger\SwaggerConfig.class
-com\test\restservice\controller\UserController.class
-com\test\restservice\repository\UserRepository.class
-com\test\restservice\Application.class
-com\test\restservice\entity\User.class
-com\test\restservice\SecurityConfig.class

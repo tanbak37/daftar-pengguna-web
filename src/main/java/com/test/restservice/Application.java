@@ -6,8 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import com.google.common.util.concurrent.Service.State;
 import com.test.restservice.entity.User;
 import com.test.restservice.repository.UserRepository;
+import com.test.restservice.entity.UserRole;
+import com.test.restservice.entity.UserWebList;
+import com.test.restservice.repository.UserRoleRepository;
+import com.test.restservice.repository.UserWebRepository;
 
 @Component
 
@@ -30,5 +35,12 @@ public class Application {
 			userRepository.save(user);
 
 		};
+		
 	}
+	
+
+	
+	
+	
+
 }
